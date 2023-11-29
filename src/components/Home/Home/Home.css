@@ -1,0 +1,15 @@
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title-thumb{ 
+    
+    color: rgb(113, 255, 91)
+}
+.fontFamily{
+    font-family: 'DM Serif Display', serif;
+}
+.fontFamily2{
+    font-family: 'Noto Sans', sans-serif;
+}

@@ -1,0 +1,17 @@
+.header a{
+    color: rgb(10, 111, 199);
+    font-size: 18px; 
+}
+.header{
+    background-color: rgb(234, 240, 241);
+    line-height: 35px;
+
+}
+.logo{  
+    margin: 5px;
+    display: block;
+    color: rgb(18, 254, 175);
+    margin-right: 40px;
+    margin-top: 10px;
+    font-family: 'DM Serif Display serif' 
+}
