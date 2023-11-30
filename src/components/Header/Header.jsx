@@ -1,33 +1,24 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
     return (
-        <Nav className=' justify-content-center header' variant="tabs" >
+        <Nav className=' justify-content-center header' variant='tabs'>
 
-            <Nav.Item>
-                <p className='logo'>Chef's Palette</p>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link}  eventKey="link-1" to='/'>Home</Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link}  eventKey="link-2">About</Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link} to='/chef/0'  eventKey="link-3">Recipes</Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link}  eventKey="link-4" to='/submit-recipe'>Submit Recipe</Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link}  eventKey="link-5">Option 2</Nav.Link>
-            </Nav.Item> 
-            <Nav.Item>
-                <Nav.Link as={Link}  eventKey="link-6">Option 2</Nav.Link>
-            </Nav.Item> 
+
+            <p className='logo'>Chefs Palette</p>
+
+
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''}  to='/'>Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/about'>About</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''}  to='/chef/0'  >Recipes</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/submit-recipe'>Submit Recipe</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/sd'  >Chefs</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/blogs'>Blogs</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : ''} to='/sdfsd'>Login</NavLink>
+
         </Nav>
     );
 };

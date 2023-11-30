@@ -15,12 +15,12 @@ const Containers = () => {
                 width: '100%',    
                 backgroundSize:'cover',  
                 height:'200px', 
-                opacity:'0.7',
+                opacity:'0.9',
                 color:'black',
                 padding:'20px'
                 
             }}>
-                <h3 className='text-light text-center'>All recipes are here for you</h3>
+                <h3 style={{fontFamily:'Noto Sans', fontWeight:'600'}} className='text-light text-center'>All recipes are here for you</h3>
                 <p className='text-light text-center'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
                  
             </div>

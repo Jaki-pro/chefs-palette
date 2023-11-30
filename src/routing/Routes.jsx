@@ -7,6 +7,8 @@ import Home from '../components/Home/Home/Home';
 import Containers from '../components/recipesRoute/Containers/Containers'; 
 import RecipeDetails from '../components/recipesRoute/RecipeDetails/RecipeDetails';
 import SubmitRecipe from '../components/SubmitRecipe/SubmitRecipe';
+import About from '../components/About/About';
+import BreakfastLunchDinner from '../components/BreakfastLunchDinner/BreakfastLunchDinner';
 const router = createBrowserRouter([
     {
         path:'/',
@@ -29,8 +31,26 @@ const router = createBrowserRouter([
             {
                 path:'submit-recipe',
                 element: <SubmitRecipe></SubmitRecipe>
+            },
+            {
+                path:'about',
+                element: <About></About>
+            },
+            {
+                path:'period/:time',
+                element: <BreakfastLunchDinner></BreakfastLunchDinner>,
+                loader: ({params})=> fetch(`http://localhost:5000/period/${params.time}`)
+            },
+            {
+                path:'*',
+                element: <h3>Error Page</h3>
             }
         ]
+    },
+    {
+        path:'blogs',
+        element: <h2 className='text-center'>Coming Soon</h2>
     }
+
 ])
 export default router;

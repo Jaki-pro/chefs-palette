@@ -3,6 +3,7 @@ import RecipeCardRn from '../RecipeCardRn/RecipeCardRn';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import areyou from '../../../assets/areYouChef.jpeg'
+import { Link } from 'react-router-dom';
 const RightNav = () => {
     const [popularRecipes, setPopularRecipes] = useState([]);
     const [recipes, setRecipes] = useState([]);
@@ -31,14 +32,15 @@ const RightNav = () => {
                 </ListGroup>
             </div>
             <div className='mt-3 ' style={{border:'5px solid yellow'}}>
-                <Card style={{backgroundColor:'palegreen', width: '18rem' ,textAlign:'center', padding:'10px'}}>
+                <Card style={{backgroundColor:'palegreen' ,textAlign:'center', padding:'10px'}}>
                     <Card.Title>Are You a Chef?</Card.Title>
                     <div style={{textAlign:'center'}}>
                         <Card.Img className='w-50' variant="top" src={areyou} />
                     </div>
                     
                     <Card.Body> 
-                        <Button variant="primary">Submit Your Recipe</Button>
+                        <Link style={{fontSize:'18px'}} to='/submit-recipe'>Submit Your Recipe</Link>
+                        
                     </Card.Body>
                 </Card>
             </div>

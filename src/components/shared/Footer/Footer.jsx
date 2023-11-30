@@ -7,6 +7,7 @@ import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
+import { FaMobileScreenButton } from 'react-icons/fa6';
 
 /**
  * Design credit: https://flutter.dev/
@@ -46,7 +47,7 @@ export default function Footer() {
           }}
         >
           <Button sx={{ minWidth: 120 }}>Install</Button>
-          <p>our mobile app</p>
+          <p style={{fontWeight:'200'}}>Our mobile app <FaMobileScreenButton /></p>
         </Box>
       </Box>
       <Box
@@ -64,11 +65,12 @@ export default function Footer() {
         }}
         onClick={() => {
           const colors = ['primary', 'neutral', 'danger', 'success', 'warning'];
-
+          
           const nextColorIndex = colors.indexOf(color) + 1;
           setColor(colors[nextColorIndex] ?? colors[0]);
         }}
       >
+        <span style={{textAlign:'center'}}>&copy; Jaki</span>
         <ColorLensRoundedIcon fontSize="small" />
       </IconButton>
     </Sheet>

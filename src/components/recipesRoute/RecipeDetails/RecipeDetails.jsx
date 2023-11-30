@@ -22,13 +22,13 @@ const RecipeDetails = () => {
                 width: '100%',    
                 backgroundSize:'cover',  
                 height:'200px', 
-                opacity:'0.7',
+                opacity:'0.9',
                 color:'black',
                 padding:'20px'
                 
             }}>
-                <h3 className='text-light text-center'>Recipe: {title}</h3>
-                <p className='text-light text-center'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
+                <h3 style={{fontFamily:'Noto Sans', fontWeight:'600'}} className='text-light text-center'>Recipe: {title}</h3>
+                <p style={{color:'green'}} className='text-center'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
                  
             </div>
             <Container className='mt-5'>
