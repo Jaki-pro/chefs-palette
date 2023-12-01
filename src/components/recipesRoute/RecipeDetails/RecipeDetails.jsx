@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Card, CardGroup, Col, Container, ListGroup, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Button, Card, CardGroup, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import RightNav from '../../shared/RightNav/RightNav';
 import { CiTimer } from 'react-icons/ci';
 import { PiHeartFill } from "react-icons/pi";
@@ -10,6 +10,10 @@ import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { FaHandPointRight } from "react-icons/fa";
 import bg4 from '../../../assets/bg4.jpg'
 const RecipeDetails = () => {
+    const navigete = useNavigate();
+    const hangleNavigate =() =>{
+        navigete(-1);
+    }
     const recipe = useLoaderData();
     const { img, title, chefName, cook_time, difficulty, likes, cuisine, ingredients, instructions } = recipe;
     let ke=0;
@@ -77,6 +81,7 @@ const RecipeDetails = () => {
 
                             </CardGroup>
                         </div>
+                        <Link onClick={hangleNavigate}><Button className='w-100'>Go Back</Button></Link>
                     </Col>
                     <Col lg={3}>
                         <RightNav></RightNav>

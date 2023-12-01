@@ -9,6 +9,8 @@ import RecipeDetails from '../components/recipesRoute/RecipeDetails/RecipeDetail
 import SubmitRecipe from '../components/SubmitRecipe/SubmitRecipe';
 import About from '../components/About/About';
 import BreakfastLunchDinner from '../components/BreakfastLunchDinner/BreakfastLunchDinner';
+import Chefs from '../components/chefs/Chefs/Chefs';
+import ChefDetails from '../components/chefs/ChefDetails/ChefDetails';
 const router = createBrowserRouter([
     {
         path:'/',
@@ -42,9 +44,20 @@ const router = createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/period/${params.time}`)
             },
             {
+                path:'chefs',
+                element:<Chefs></Chefs>,
+                loader:()=> fetch(`http://localhost:5000/chefs`)
+            },
+            {
+                path:'chef-details/:chefId',
+                element:<ChefDetails></ChefDetails>,
+                loader: ({params})=> fetch(`http://localhost:5000/chef-details/${params.chefId}`)
+            },
+            {
                 path:'*',
                 element: <h3>Error Page</h3>
-            }
+            },
+             
         ]
     },
     {
