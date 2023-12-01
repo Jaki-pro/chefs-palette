@@ -5,6 +5,8 @@ import { styled } from '@mui/material/styles';
 import bg3 from '../../assets/bg3.jpg'
 import { Button } from '@mui/joy';
 import { FaUpload } from "react-icons/fa6";
+import { Link, useNavigate } from 'react-router-dom';
+import { IoMdArrowRoundBack } from "react-icons/io";
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -16,7 +18,12 @@ const VisuallyHiddenInput = styled('input')({
     whiteSpace: 'nowrap',
     width: 1,
 });
+
 const SubmitRecipe = () => {
+    const navigate = useNavigate();
+    const hangleNavigate = () => {
+        navigate(-1);
+    }
     return (
         <div>
             <div style={{
@@ -31,7 +38,6 @@ const SubmitRecipe = () => {
             }}>
                 <h3 style={{ fontFamily: 'Noto Sans', fontWeight: '600', fontSize: '30px', color: 'white' }} className='text-center'>Are you ready to submit?</h3>
                 <p className='text-center' style={{ color: '#000000', fontSize: '20px', fontFamily: 'Noto Sans', }}>If your Recipe is approved you will be honoured -_-</p>
-
             </div>
             <Container>
                 <Row>
@@ -54,7 +60,7 @@ const SubmitRecipe = () => {
                             </Form.Group>
                             <span>Upload a photo of your recipe </span>
                             <Button className='bg-primary text-light' component="label" variant="contained-primary" required>
-                                 Upload file <FaUpload /> 
+                                Upload file <FaUpload />
                                 <VisuallyHiddenInput type="file" />
                             </Button>
                             <br />
@@ -81,9 +87,13 @@ const SubmitRecipe = () => {
                                 <Form.Label>Methods</Form.Label>
                                 <Form.Control as="textarea" rows={3} placeholder='1/' required />
                             </Form.Group>
-                            <Button className='bg-primary' type="submit">
-                                Send Response
-                            </Button>
+                            <div className='d-flex justify-content-evenly'>
+                                <Button style={{width:'200px'}} className='bg-warning' type="submit">
+                                    Send Response
+                                </Button>
+                                <Link onClick={hangleNavigate}><Button style={{width:'200px'}}><IoMdArrowRoundBack /> Go Back</Button></Link>
+                            </div>
+
                         </Form>
                     </Col>
                     <Col lg={3}>

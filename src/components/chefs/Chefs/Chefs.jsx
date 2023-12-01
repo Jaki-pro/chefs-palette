@@ -7,14 +7,15 @@ const Chefs = () => {
     const chefs = useLoaderData();
     return (
         <div>
-             <div className='' style={{
+            <div className='' style={{
                 backgroundImage: `url(${bg5})`,
                 width: '100%',
                 backgroundSize: 'cover',
                 height: '200px',
                 opacity: '0.9',
                 color: 'black',
-                padding: '20px'
+                padding: '40px',
+                marginBottom: '7%'
 
             }}>
                 <h3 style={{ fontFamily: 'Noto Sans', fontWeight: '600' }} className='text-light text-center'>Our Chefs</h3>
@@ -27,14 +28,17 @@ const Chefs = () => {
 
                             chefs.map(chef => <div className='w-75' key={chef.chefId}>
                                 <div className='d-flex justify-content-evenly'>
-                                    <img className=' ' style={{ height: '200px', width: '40%' }} src={chef.img} alt="" />
-                                </div> 
-                                <div style={{ border: '2px solid lightgrey' }} className='m-2 p-2 text-center'>
-                                    <Link className='text-decoration-none' to={`/chef-details/${chef.chefId}`}>
-                                        <h4 className=''>{chef.chefName}</h4>
-                                        <p className=''>{chef.post}</p>
-                                    </Link>
+                                    <img className=' ' style={{ height: '240px', width: '70%' }} src={chef.img} alt="" />
                                 </div>
+
+                                <Link style={{ width: '' }} className='text-decoration-none ' to={`/chef-details/${chef.chefId}`}>
+                                    <div className='text-center bg-warning p-1' style={{border:'2px solid lightgrey', lineHeight:'5px', borderRadius:'5px'}}>
+                                        <h4 className='' style={{ fontSize: '', fontFamily: 'Noto Sans' }}>{chef.chefName}</h4>
+                                        <p className='text-muted'>-{chef.post}</p>
+                                    </div>
+
+                                </Link>
+
 
                             </div>)
                         }</Col>
