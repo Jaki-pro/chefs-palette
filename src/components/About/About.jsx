@@ -19,7 +19,7 @@ const About = () => {
                 height: '200px',
                 opacity: '0.9',
                 color: 'black',
-                padding: '20px'
+                padding: '50px'
 
             }}>
                 <h3 style={{ fontFamily: 'Noto Sans', fontWeight: '600' }} className='text-light text-center'>About Us</h3>

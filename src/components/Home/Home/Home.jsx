@@ -36,7 +36,7 @@ const Home = () => {
                 <p style={{fontWeight:'300'}} className='text-light text-center'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
             </div>
             <div className='d-flex bg-secondary mb-5 p-2'>
-                <div className='bx-1' style={{fontSize:'25px', fontFamily:'italic'}}><i>Breaking</i></div><Marquee className='text-light' style={{fontSize:'20px'}}><i>Main chef, Yazuk Zilan is giving opportunity of a session for a low cost..Grave the chance immediately.</i></Marquee>
+                <div className='bx-1' style={{fontSize:'25px', fontFamily:'italic'}}><i>Breaking</i></div><Marquee className='text-light' style={{fontSize:'20px'}}><i>Our main chef, Yazuk Zilan is giving opportunity of a session for a low cost..Grave the chance immediately.</i></Marquee>
             </div>
             <Container>
 

@@ -13,6 +13,10 @@ import Chefs from '../components/chefs/Chefs/Chefs';
 import ChefDetails from '../components/chefs/ChefDetails/ChefDetails';
 import Login from '../components/logins/Login/Login';
 import Register from '../components/logins/Register/Register';
+import SendResponse from '../components/SendResponse/SendResponse';
+import PrivateRoute from './PrivateRoute';
+import Enrolment from '../components/Enrolment/Enrolment';
+import Profile from '../components/Profile/Profile';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -64,16 +68,33 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: 'blogs',
+                element: <h2 className='text-center'>Coming Soon</h2>
+            },
+            {
+                path: 'send-response',
+                element: <PrivateRoute><SendResponse></SendResponse></PrivateRoute>
+            },
+            {
+                path: 'terms-conditions',
+                element: <h2 className='text-center'>Coming Soon</h2>
+            },
+            {
+                path: 'enrollment',
+                element: <PrivateRoute><Enrolment></Enrolment></PrivateRoute>
+            },
+            {
+                path: 'profile',
+                element: <Profile></Profile>
+            },
+            {
                 path: '*',
                 element: <h3>Error Page</h3>
             },
 
         ]
     },
-    {
-        path: 'blogs',
-        element: <h2 className='text-center'>Coming Soon</h2>
-    }
+
 
 ])
 export default router;

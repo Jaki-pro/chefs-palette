@@ -7,6 +7,7 @@ import { Button } from '@mui/joy';
 import { FaUpload } from "react-icons/fa6";
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
+import toast from 'react-hot-toast';
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -24,6 +25,10 @@ const SubmitRecipe = () => {
     const hangleNavigate = () => {
         navigate(-1);
     }
+    const notify=()=>{
+        toast('you should login first')
+    }
+
     return (
         <div>
             <div style={{
@@ -88,10 +93,10 @@ const SubmitRecipe = () => {
                                 <Form.Control as="textarea" rows={3} placeholder='1/' required />
                             </Form.Group>
                             <div className='d-flex justify-content-evenly'>
-                                <Button style={{width:'200px'}} className='bg-warning' type="submit">
+                                <Link onClick={notify} to='/send-response'><Button style={{ width: '200px' }} className='bg-warning' type="submit">
                                     Send Response
-                                </Button>
-                                <Link onClick={hangleNavigate}><Button style={{width:'200px'}}><IoMdArrowRoundBack /> Go Back</Button></Link>
+                                </Button></Link>
+                                <Link onClick={hangleNavigate}><Button style={{ width: '200px' }}><IoMdArrowRoundBack /> Go Back</Button></Link>
                             </div>
 
                         </Form>
